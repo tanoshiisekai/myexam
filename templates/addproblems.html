@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" type="text/css" />
+</head>
+
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="/addproblems"><span class="current">添加题目</span></a></li>
+            <li><a href="/removeproblems">删除题目</a></li>
+            <li><a href="/grades">成绩清单</a></li>
+            <li><a href="/initstudents">初始化考生</a></li>
+            <li><a href="/modifypassword">修改密码</a></li>
+            <li><a href="/importproblems">导入试题</a></li>
+            <li><a href="/quitsystem">退出系统</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="line">
+            <div class="block">题目编号：</div>
+            <div class="block">{{ problem_id }}</div>
+        </div>
+        <div class="line">
+            <div class="block" style="font-size: 30dp; font-weight: bold; color: red;">
+                注意：如果题目有配图，请先上传题目配图，点击“开始上传”后，再进行其他操作！！！
+            </div>
+        </div>
+        <div class="line">
+            <div class="block">题目配图：</div>
+            <div class="block">
+                <form action="/problem_picpath" method="post" enctype="multipart/form-data">
+                    <input type="file" id="problem_picpath" name="problem_picpath"
+                        accept="image/gif, image/jpeg, image/png, image/jpg">
+                    <input type="submit" value="开始上传" />
+                </form>
+            </div>
+            <div class="block">( {{problem_info}} )</div>
+            <div class="block">
+                <input type="hidden" id="problem_filename" value="{{problem_filename}}" />
+            </div>
+            <div class="block">{{problem_filename}}</div>
+        </div>
+        <div class="line">
+            <div class="block">题目类型：</div>
+            <div class="block">
+                <select name="problem_typestring" id="problem_typestring">
+                    <option value="不定项选择题">不定项选择题</option>
+                    <option value="识图题">识图题</option>
+                </select>
+            </div>
+        </div>
+        <div class="line">
+            <div class="block">题目描述：</div>
+            <div class="block">
+                <textarea id="problem_description" style="width:1000px;height:100px;"></textarea>
+            </div>
+        </div>
+        <div class="line">
+            <div class="line">
+                <div class="block">选项A：</div>
+                <div class="block">
+                    <input type="text" id="problem_choiceA" />
+                </div>
+            </div>
+        </div>
+        <div class="line">
+            <div class="line">
+                <div class="block">选项B：</div>
+                <div class="block">
+                    <input type="text" id="problem_choiceB" />
+                </div>
+            </div>
+        </div>
+        <div class="line">
+            <div class="line">
+                <div class="block">选项C：</div>
+                <div class="block">
+                    <input type="text" id="problem_choiceC" />
+                </div>
+            </div>
+        </div>
+        <div class="line">
+            <div class="line">
+                <div class="block">选项D：</div>
+                <div class="block">
+                    <input type="text" id="problem_choiceD" />
+                </div>
+            </div>
+        </div>
+        <div class="line">
+            <div class="line">
+                <div class="block">正确选项：</div>
+                <div class="block">
+                    <input type="text" id="problem_answer" />
+                </div>
+            </div>
+        </div>
+        <div class="line">
+            <div class="line">
+                <div class="block"></div>
+                <div class="block">
+                    <input type="button" value="提交" onclick="addproblems()" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='conf.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='addproblems.js') }}"></script>
+</body>
+
+</html>

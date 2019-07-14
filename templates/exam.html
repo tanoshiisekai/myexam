@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" type="text/css" />
+</head>
+
+<body>
+
+    <div class="line">
+        <div style="text-align: right;margin-right: 100px;">
+            欢迎你，{{username}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" onclick="logout()" id="goout">点此退出系统</a>
+        </div>
+    </div>
+    <div class="content" id="content">
+        <div class="line">
+            <div class="block" style="color:red;font-weight: bold;">使用须知：
+                <ol>
+                    <li>解题过程中，请不要刷新页面。</li>
+                    <li>解题完成后，请点击页面右上角退出系统。</li>
+                </ol>
+            </div>
+        </div>
+        <div class="line" id="startpanel">
+            <input type="button" value="开始答题" onclick="startexam()" />
+        </div>
+        <div class="line" id="problempanel">
+            <div class="typestring" id="typestring"></div>
+            <div class="description" id="description"></div>
+            <div class="picpath" id="pic"><img id="picpath" style="width: 800px;display: none;" src="" /></div>
+            <div class="choiceA choice" id="choiceA"></div>
+            <div class="choiceB choice" id="choiceB"></div>
+            <div class="choiceC choice" id="choiceC"></div>
+            <div class="choiceD choice" id="choiceD"></div>
+            <input type="hidden" id="answer" value="" />
+            <div class="answerline" style="display: none;" id="answerline">
+                请
+                <span style="font-weight: bold;color:red;">输入</span>
+                你认为正确的选项字母并点击下一题（例如：　BD)<br />
+                <input type="text" id="answerbox" />
+                <input id="nextbutton" type="button" value="下一题" onclick="nextproblem()" />
+            </div>
+            <div class="bottomline"></div>
+        </div>
+        <div id="timebox" style="display: none;">
+            <div id="problemspan">
+                答题进度<br/>
+                <span class="problemnumber" id="problemnumber"></span>
+                <span class="problemnumber1">/</span>
+                <span class="problemnumber" id="totalnumber"></span>
+            </div>
+            <div id="timespan">
+                本题剩余时间<br /><span id="remain"></span>秒
+            </div>
+        </div>
+    </div>
+    <div class="content1" id="content1" style="display: none;">
+        <div class="result">
+            共<span id="tcount"></span>题，
+            答对<span id="rcount"></span>题，
+            答错<span id="fcount"></span>题，
+            用时<span id="userlog_timeduring"></span>秒
+        </div>
+        <div class="info">题目已完成，请点击页面右上角的链接，安全退出系统。</div>
+    </div>
+    <input type="hidden" id="problemlist" value="" />
+    <input type="hidden" id="rightcount" value="0" />
+    <input type="hidden" id="totalcount" value="" />
+    <input type="hidden" id="userchoicelog" value="" />
+    <input type="hidden" id="problemid" value="" />
+    <input type="hidden" id="starttime" value="" />
+    <input type="hidden" id="endtime" value="" />
+    <input type="hidden" id="important_key" value="" />
+    <input type="hidden" id="token" value="" />
+    <script type="text/javascript" src="{{ url_for('static', filename='md5.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='conf.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='exam.js') }}"></script>
+</body>
+
+</html>

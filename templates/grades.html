@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" type="text/css"/>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="/addproblems">添加题目</a></li>
+            <li><a href="/removeproblems">删除题目</a></li>
+            <li><a href="/grades"><span class="current">成绩清单</span></a></li>
+            <li><a href="/initstudents">初始化考生</a></li>
+            <li><a href="/modifypassword">修改密码</a></li>
+            <li><a href="/importproblems">导入试题</a></li>
+            <li><a href="/quitsystem">退出系统</a></li>
+        </ul>
+    </div>
+    <div class="content" id="gradetable">
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='conf.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='grades.js') }}"></script>
+</body>
+</html>

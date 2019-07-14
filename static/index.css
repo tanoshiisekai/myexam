@@ -1,0 +1,128 @@
+.line{
+    float: left;
+    width: 100%;
+}
+.block{
+    float: left;
+    padding-bottom: 20px;
+    margin-right: 10px;
+}
+.menu{
+    float: left;
+    height: 60px;
+    width: 100%;
+    border-bottom: 2px solid #000000;
+}
+.menu ul{
+    list-style-type: none;
+}
+.menu ul li{
+    float: left;
+    margin-left: 20px;
+}
+.menu ul li a{
+    color: gray;
+    text-decoration: none;
+}
+.menu ul li a:hover{
+    color: red;
+    font-weight: bold;
+}
+.current{
+    color: blue;
+    font-weight: bold;
+}
+.content {
+    float: left;
+    width: 100%;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+#startpanel{
+    width: 100%;
+    float: left;
+    padding-left: 50px;
+}
+#problempanel {
+    width: 60%;
+    float:left;
+    padding-left: 50px;
+}
+.typestring {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.choice {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    color: darkolivegreen;
+}
+.description {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: blueviolet;
+}
+.bottomline{
+    height: 200px;
+}
+.answerline{
+    float: left;
+    margin-top: 20px;
+}
+.content1{
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    margin-top: 100px;
+}
+#timebox{
+    float: right;
+    width: 20%;
+    padding-right: 100px;
+}
+#remain{
+    font-size: 48px;
+    font-weight: bold;
+    color: red;
+}
+#timespan{
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.problemnumber{
+    font-size: 48px;
+    color: dimgrey;
+}
+.problemnumber1{
+    font-size: 36px;
+}
+#problemspan{
+    margin-left: 100px;
+}
+#goout{
+    text-decoration: none;
+    font-weight: bold;
+    color: blue;
+}
+#goout:hover{
+    color: green;
+}
+#picpath{
+    object-fit: fill;
+    max-width: 1000px;
+}
+#aimtable{
+    width: 600px;
+}
+#aimtable, #aimtable td, #aimtable th{
+    border:2px solid black;
+}
+#aimtable{
+    border-collapse:collapse;
+}
+#aimtable td{
+    padding: 10px;
+}
